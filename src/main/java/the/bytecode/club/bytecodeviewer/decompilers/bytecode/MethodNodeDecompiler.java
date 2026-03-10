@@ -208,15 +208,13 @@ public class MethodNodeDecompiler
 
     private static String printAttr(Object o, InstructionPrinter insnPrinter)
     {
-        if (o instanceof LocalVariableNode)
+        if (o instanceof LocalVariableNode lvn)
         {
-            LocalVariableNode lvn = (LocalVariableNode) o;
             return "index=" + lvn.index + " , name=" + lvn.name + " , desc=" + lvn.desc + ", sig=" + lvn.signature
                 + ", start=L" + insnPrinter.resolveLabel(lvn.start) + ", end=L" + insnPrinter.resolveLabel(lvn.end);
         }
-        else if (o instanceof AnnotationNode)
+        else if (o instanceof AnnotationNode an)
         {
-            AnnotationNode an = (AnnotationNode) o;
             StringBuilder sb = new StringBuilder();
             sb.append("desc = ");
             sb.append(an.desc);

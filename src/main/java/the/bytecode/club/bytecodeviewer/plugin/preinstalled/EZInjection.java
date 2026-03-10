@@ -126,7 +126,7 @@ public class EZInjection extends Plugin
 
     public static void print(String message)
     {
-        System.out.println(message);
+        IO.println(message);
     }
 
     @Override

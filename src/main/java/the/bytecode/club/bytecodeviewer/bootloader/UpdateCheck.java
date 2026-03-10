@@ -256,7 +256,7 @@ public class UpdateCheck implements Runnable
                 if (mbs % 5 == 0 && mbs != 0)
                 {
                     if (!flag)
-                        System.out.println("Downloaded " + mbs + "MBs so far");
+                        IO.println("Downloaded " + mbs + "MBs so far");
                     flag = true;
                 }
                 else
