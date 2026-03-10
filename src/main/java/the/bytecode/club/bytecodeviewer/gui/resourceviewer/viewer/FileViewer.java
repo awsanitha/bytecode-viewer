@@ -35,6 +35,7 @@ import the.bytecode.club.bytecodeviewer.util.SyntaxLanguage;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.Serial;
 
 /**
  * Represents any open non-class file inside of a tab.
@@ -174,5 +175,6 @@ public class FileViewer extends ResourceViewer
             src.setEnabled(true);
     }
 
+    @Serial
     private static final long serialVersionUID = 6103372882168257164L;
 }

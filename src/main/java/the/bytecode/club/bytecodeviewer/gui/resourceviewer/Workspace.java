@@ -34,6 +34,7 @@ import the.bytecode.club.bytecodeviewer.gui.tabpopup.closer.PopupMenuTabsCloseCo
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.Serial;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
@@ -198,5 +199,6 @@ public class Workspace extends TranslatedVisibleComponent
         tabs.updateUI();
     }
 
+    @Serial
     private static final long serialVersionUID = 6542337997679487946L;
 }
