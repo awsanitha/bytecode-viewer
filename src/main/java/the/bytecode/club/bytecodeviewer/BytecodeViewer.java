@@ -170,16 +170,7 @@ public class BytecodeViewer
         System.out.println(" - https://bytecodeviewer.com\r\nCreated by @Konloch - https://konloch.com\r\nPresented by https://the.bytecode.club");
 
         // Set the security manager
-        try
-        {
-            System.setSecurityManager(sm);
-        }
-        catch (Throwable t)
-        {
-            System.err.println("Cannot set security manager! Are you on Java 18+ and have not enabled support for it?");
-            System.err.println("Because of this, you may be susceptible to some exploits!");
-            System.err.println("Either deal with it or allow it using the -Djava.security.manager=allow parameter.");
-        }
+        setSecurityManagerSafely(sm);
 
         //init the CLI
         CLI.init(launchArgs);
@@ -235,6 +226,21 @@ public class BytecodeViewer
         catch (Exception e)
         {
             BytecodeViewer.handleException(e);
+        }
+    }
+
+    @SuppressWarnings("removal")
+    private static void setSecurityManagerSafely(SecurityMan sm)
+    {
+        try
+        {
+            System.setSecurityManager(sm);
+        }
+        catch (Throwable t)
+        {
+            System.err.println("Cannot set security manager! Are you on Java 18+ and have not enabled support for it?");
+            System.err.println("Because of this, you may be susceptible to some exploits!");
+            System.err.println("Either deal with it or allow it using the -Djava.security.manager=allow parameter.");
         }
     }
 
