@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        java: [ '8', '11', '17', '21', '25' ] # LTS versions
+        java: [ '25' ] # Java 25 minimum required (source/target level 25)
 
     steps:
     - uses: actions/checkout@v4
@@ -32,7 +32,7 @@ jobs:
       id: project
     - name: 'Upload Artifact'
       uses: actions/upload-artifact@v4
-      if: ${{ matrix.java == '8' }}
+      if: ${{ matrix.java == '25' }}
       with:
         name: Bytecode-Viewer-${{ env.bcv_version }}-SNAPSHOT
         path: target/Bytecode-Viewer-${{ env.bcv_version }}.jar
