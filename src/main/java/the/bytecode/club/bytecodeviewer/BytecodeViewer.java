@@ -137,6 +137,7 @@ public class BytecodeViewer
     public static List<Process> createdProcesses = new ArrayList<>();
 
     //Security Manager for dynamic analysis debugging
+    @SuppressWarnings("removal")
     public static SecurityMan sm = new SecurityMan();
 
     //GSON Reference
@@ -172,11 +173,11 @@ public class BytecodeViewer
         // Set the security manager
         try
         {
-            System.setSecurityManager(sm);
+            setSecurityManagerSafely(sm);
         }
         catch (Throwable t)
         {
-            System.err.println("Cannot set security manager! Are you on Java 18+ and have not enabled support for it?");
+            System.err.println("Cannot set security manager! Are you on Java 25+ and have not enabled support for it?");
             System.err.println("Because of this, you may be susceptible to some exploits!");
             System.err.println("Either deal with it or allow it using the -Djava.security.manager=allow parameter.");
         }
@@ -835,5 +836,11 @@ public class BytecodeViewer
         {
             SwingUtilities.updateComponentTreeUI(w);
         }
+    }
+
+    @SuppressWarnings("removal")
+    private static void setSecurityManagerSafely(SecurityMan sm)
+    {
+        System.setSecurityManager(sm);
     }
 }
