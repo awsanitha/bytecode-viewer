@@ -20,12 +20,9 @@ package the.bytecode.club.bytecodeviewer.gui.hexviewer;
 
 import org.exbin.bined.CodeAreaUtils;
 
-import javax.annotation.ParametersAreNonnullByDefault;
-
 /**
  * Go-to position panel for binary editor.
  */
-@ParametersAreNonnullByDefault
 public class GoToBinaryPanel extends javax.swing.JPanel
 {
 

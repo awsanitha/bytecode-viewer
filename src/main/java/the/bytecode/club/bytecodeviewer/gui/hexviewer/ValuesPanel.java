@@ -23,7 +23,6 @@ import org.exbin.bined.CodeAreaCaretPosition;
 import org.exbin.bined.DataChangedListener;
 import org.exbin.bined.swing.basic.CodeArea;
 
-import javax.annotation.ParametersAreNonnullByDefault;
 import javax.swing.*;
 import java.awt.event.KeyEvent;
 import java.math.BigInteger;
@@ -40,7 +39,6 @@ import org.exbin.bined.CodeAreaCaretListener;
  *
  * @author hajdam
  */
-@ParametersAreNonnullByDefault
 public class ValuesPanel extends javax.swing.JPanel
 {
 
@@ -759,7 +757,6 @@ public class ValuesPanel extends javax.swing.JPanel
         STRING
     }
 
-    @ParametersAreNonnullByDefault
     private class ValuesUpdater
     {
 

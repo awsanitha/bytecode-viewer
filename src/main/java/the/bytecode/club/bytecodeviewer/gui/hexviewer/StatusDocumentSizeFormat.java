@@ -20,8 +20,7 @@ package the.bytecode.club.bytecodeviewer.gui.hexviewer;
 
 import org.exbin.bined.PositionCodeType;
 
-import javax.annotation.Nonnull;
-import javax.annotation.ParametersAreNonnullByDefault;
+import org.jetbrains.annotations.NotNull;
 import java.util.Objects;
 
 /**
@@ -29,7 +28,6 @@ import java.util.Objects;
  *
  * @author hajdam
  */
-@ParametersAreNonnullByDefault
 public class StatusDocumentSizeFormat
 {
 
@@ -47,7 +45,7 @@ public class StatusDocumentSizeFormat
         this.showRelative = showRelative;
     }
 
-    @Nonnull
+    @NotNull
     public PositionCodeType getCodeType()
     {
         return positionCodeType;

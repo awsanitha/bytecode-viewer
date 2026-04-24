@@ -121,7 +121,7 @@ public class Boot
                     setState("Bytecode Viewer Boot Screen - Downloading " + fileName + "...");
                     IO.println("Downloading " + fileName);
 
-                    try (InputStream is = new URL("https://github.com/Konloch/bytecode-viewer/raw/master/libs/" + fileName).openConnection().getInputStream();
+                    try (InputStream is = URI.create("https://github.com/Konloch/bytecode-viewer/raw/master/libs/" + fileName).toURL().openConnection().getInputStream();
                          FileOutputStream fos = new FileOutputStream(file))
                     {
                         IO.println("Downloading from " + s);
@@ -407,7 +407,7 @@ public class Boot
                     setState("Bytecode Viewer Boot Screen - Downloading " + fileName + "...");
                     IO.println("Downloading " + fileName);
 
-                    try (InputStream is = new URL("https://github.com/Konloch/bytecode-viewer/raw/master/libs/" + fileName).openConnection().getInputStream();
+                    try (InputStream is = URI.create("https://github.com/Konloch/bytecode-viewer/raw/master/libs/" + fileName).toURL().openConnection().getInputStream();
                          FileOutputStream fos = new FileOutputStream(file))
                     {
                         IO.println("Downloading from " + s);

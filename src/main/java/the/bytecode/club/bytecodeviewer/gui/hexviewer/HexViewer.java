@@ -25,7 +25,7 @@ import org.exbin.bined.EditMode;
 import org.exbin.bined.RowWrappingMode;
 import org.exbin.bined.swing.basic.CodeArea;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -242,13 +242,7 @@ public class HexViewer extends JPanel
     {
         try
         {
-            return switch (java.awt.Toolkit.getDefaultToolkit().getMenuShortcutKeyMask())
-            {
-                case java.awt.Event.META_MASK -> KeyEvent.META_DOWN_MASK;
-                case java.awt.Event.SHIFT_MASK -> KeyEvent.SHIFT_DOWN_MASK;
-                case java.awt.Event.ALT_MASK -> KeyEvent.ALT_DOWN_MASK;
-                default -> KeyEvent.CTRL_DOWN_MASK;
-            };
+            return java.awt.Toolkit.getDefaultToolkit().getMenuShortcutKeyMaskEx();
         }
         catch (java.awt.HeadlessException _)
         {
@@ -256,7 +250,7 @@ public class HexViewer extends JPanel
         }
     }
 
-    @Nonnull
+    @NotNull
     private JPopupMenu createPopupMenu()
     {
         JPopupMenu menu = new JPopupMenu();
