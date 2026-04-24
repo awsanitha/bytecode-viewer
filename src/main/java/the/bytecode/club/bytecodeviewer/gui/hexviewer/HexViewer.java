@@ -25,7 +25,7 @@ import org.exbin.bined.EditMode;
 import org.exbin.bined.RowWrappingMode;
 import org.exbin.bined.swing.basic.CodeArea;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -256,7 +256,7 @@ public class HexViewer extends JPanel
         }
     }
 
-    @Nonnull
+    @NotNull
     private JPopupMenu createPopupMenu()
     {
         JPopupMenu menu = new JPopupMenu();

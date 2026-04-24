@@ -23,14 +23,11 @@ import org.exbin.bined.EditMode;
 import org.exbin.bined.EditOperation;
 import org.exbin.bined.SelectionRange;
 
-import javax.annotation.ParametersAreNonnullByDefault;
-
 /**
  * Binary editor status interface.
  *
  * @author hajdam
  */
-@ParametersAreNonnullByDefault
 public interface BinaryStatusApi
 {
 

@@ -20,8 +20,7 @@ package the.bytecode.club.bytecodeviewer.gui.hexviewer;
 
 import org.exbin.bined.*;
 
-import javax.annotation.Nonnull;
-import javax.annotation.ParametersAreNonnullByDefault;
+import org.jetbrains.annotations.NotNull;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
@@ -33,7 +32,6 @@ import java.awt.event.MouseEvent;
  *
  * @author hajdam
  */
-@ParametersAreNonnullByDefault
 public class BinaryStatusPanel extends javax.swing.JPanel implements BinaryStatusApi
 {
 
@@ -492,7 +490,7 @@ public class BinaryStatusPanel extends javax.swing.JPanel implements BinaryStatu
         updateDocumentSizeToolTip();
     }
 
-    @Nonnull
+    @NotNull
     public String getEncoding()
     {
         return encodingLabel.getText();
@@ -666,7 +664,7 @@ public class BinaryStatusPanel extends javax.swing.JPanel implements BinaryStatu
         documentSizeLabel.setToolTipText(builder.toString());
     }
 
-    @Nonnull
+    @NotNull
     private String numberToPosition(long value, PositionCodeType codeType)
     {
         if (value == 0)

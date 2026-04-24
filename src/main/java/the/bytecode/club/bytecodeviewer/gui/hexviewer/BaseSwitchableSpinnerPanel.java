@@ -22,8 +22,7 @@ import org.exbin.bined.CodeAreaUtils;
 import org.exbin.bined.CodeCharactersCase;
 import org.exbin.bined.PositionCodeType;
 
-import javax.annotation.Nonnull;
-import javax.annotation.ParametersAreNonnullByDefault;
+import org.jetbrains.annotations.NotNull;
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -41,7 +40,6 @@ import java.util.Arrays;
 /**
  * Spinner supporting multiple bases.
  */
-@ParametersAreNonnullByDefault
 public class BaseSwitchableSpinnerPanel extends javax.swing.JPanel
 {
 
@@ -237,7 +235,6 @@ public class BaseSwitchableSpinnerPanel extends javax.swing.JPanel
         spinner.removeChangeListener(changeListener);
     }
 
-    @ParametersAreNonnullByDefault
     private class PositionSpinnerEditor extends JPanel implements ChangeListener, PropertyChangeListener, LayoutManager
     {
 
@@ -305,13 +302,13 @@ public class BaseSwitchableSpinnerPanel extends javax.swing.JPanel
             spinner.addChangeListener(this);
         }
 
-        @Nonnull
+        @NotNull
         private JTextField getTextField()
         {
             return textField;
         }
 
-        @Nonnull
+        @NotNull
         private JSpinner getSpinner()
         {
             return spinner;
@@ -386,7 +383,7 @@ public class BaseSwitchableSpinnerPanel extends javax.swing.JPanel
         /**
          * Returns the size of the parents insets.
          */
-        @Nonnull
+        @NotNull
         private Dimension insetSize(Container parent)
         {
             Insets insets = parent.getInsets();
@@ -395,7 +392,7 @@ public class BaseSwitchableSpinnerPanel extends javax.swing.JPanel
             return new Dimension(width, height);
         }
 
-        @Nonnull
+        @NotNull
         @Override
         public Dimension preferredLayoutSize(Container parent)
         {
@@ -409,7 +406,7 @@ public class BaseSwitchableSpinnerPanel extends javax.swing.JPanel
             return preferredSize;
         }
 
-        @Nonnull
+        @NotNull
         @Override
         public Dimension minimumLayoutSize(Container parent)
         {
@@ -435,7 +432,7 @@ public class BaseSwitchableSpinnerPanel extends javax.swing.JPanel
             }
         }
 
-        @Nonnull
+        @NotNull
         public PositionCodeType getPositionCodeType()
         {
             return positionCodeType;
@@ -446,7 +443,7 @@ public class BaseSwitchableSpinnerPanel extends javax.swing.JPanel
             this.positionCodeType = positionCodeType;
         }
 
-        @Nonnull
+        @NotNull
         private String getPositionAsString(long position)
         {
             if (position < 0)
@@ -456,7 +453,7 @@ public class BaseSwitchableSpinnerPanel extends javax.swing.JPanel
             return getNonNegativePostionAsString(position);
         }
 
-        @Nonnull
+        @NotNull
         private String getNonNegativePostionAsString(long position)
         {
             Arrays.fill(cache, ' ');
