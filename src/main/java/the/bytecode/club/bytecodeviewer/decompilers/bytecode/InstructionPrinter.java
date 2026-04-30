@@ -126,40 +126,25 @@ public class InstructionPrinter implements Opcodes
     public String printInstruction(AbstractInsnNode ain)
     {
         String line = "";
-        if (ain instanceof VarInsnNode)
-            line = printVarInsnNode((VarInsnNode) ain);
-        else if (ain instanceof IntInsnNode)
-            line = printIntInsnNode((IntInsnNode) ain);
-        else if (ain instanceof FieldInsnNode)
-            line = printFieldInsnNode((FieldInsnNode) ain);
-        else if (ain instanceof MethodInsnNode)
-            line = printMethodInsnNode((MethodInsnNode) ain);
-        else if (ain instanceof LdcInsnNode)
-            line = printLdcInsnNode((LdcInsnNode) ain);
-        else if (ain instanceof InsnNode)
-            line = printInsnNode((InsnNode) ain);
-        else if (ain instanceof JumpInsnNode)
-            line = printJumpInsnNode((JumpInsnNode) ain);
-        else if (ain instanceof LineNumberNode)
-            line = printLineNumberNode((LineNumberNode) ain);
-        else if (ain instanceof LabelNode)
-            line = printLabelNode((LabelNode) ain);
-        else if (ain instanceof TypeInsnNode)
-            line = printTypeInsnNode((TypeInsnNode) ain);
-        else if (ain instanceof FrameNode)
-            line = printFrameNode((FrameNode) ain);
-        else if (ain instanceof IincInsnNode)
-            line = printIincInsnNode((IincInsnNode) ain);
-        else if (ain instanceof TableSwitchInsnNode)
-            line = printTableSwitchInsnNode((TableSwitchInsnNode) ain);
-        else if (ain instanceof LookupSwitchInsnNode)
-            line = printLookupSwitchInsnNode((LookupSwitchInsnNode) ain);
-        else if (ain instanceof InvokeDynamicInsnNode)
-            line = printInvokeDynamicInsNode((InvokeDynamicInsnNode) ain);
-        else if (ain instanceof MultiANewArrayInsnNode)
-            line = printMultiANewArrayInsNode((MultiANewArrayInsnNode) ain);
-        else
-            line += "UNADDED OPCODE: " + nameOpcode(ain.getOpcode()) + " " + ain;
+        switch (ain) {
+            case VarInsnNode node15 -> line = printVarInsnNode(node15);
+            case IntInsnNode node14 -> line = printIntInsnNode(node14);
+            case FieldInsnNode node13 -> line = printFieldInsnNode(node13);
+            case MethodInsnNode node12 -> line = printMethodInsnNode(node12);
+            case LdcInsnNode node11 -> line = printLdcInsnNode(node11);
+            case InsnNode node10 -> line = printInsnNode(node10);
+            case JumpInsnNode node9 -> line = printJumpInsnNode(node9);
+            case LineNumberNode node8 -> line = printLineNumberNode(node8);
+            case LabelNode node7 -> line = printLabelNode(node7);
+            case TypeInsnNode node6 -> line = printTypeInsnNode(node6);
+            case FrameNode node5 -> line = printFrameNode(node5);
+            case IincInsnNode node4 -> line = printIincInsnNode(node4);
+            case TableSwitchInsnNode node3 -> line = printTableSwitchInsnNode(node3);
+            case LookupSwitchInsnNode node2 -> line = printLookupSwitchInsnNode(node2);
+            case InvokeDynamicInsnNode node1 -> line = printInvokeDynamicInsNode(node1);
+            case MultiANewArrayInsnNode node -> line = printMultiANewArrayInsNode(node);
+            case null, default -> line += "UNADDED OPCODE: " + nameOpcode(ain.getOpcode()) + " " + ain;
+        }
 
         return line;
     }
