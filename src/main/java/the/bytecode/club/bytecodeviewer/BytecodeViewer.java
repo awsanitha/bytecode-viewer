@@ -157,7 +157,7 @@ public class BytecodeViewer
      *
      * @param args files you want to open or CLI
      */
-    public static void main(String[] args)
+    void main(String[] args)
     {
         launchArgs = args;
 
@@ -174,7 +174,7 @@ public class BytecodeViewer
         {
             System.setSecurityManager(sm);
         }
-        catch (Throwable t)
+        catch (Throwable _)
         {
             System.err.println("Cannot set security manager! Are you on Java 18+ and have not enabled support for it?");
             System.err.println("Because of this, you may be susceptible to some exploits!");
@@ -491,7 +491,7 @@ public class BytecodeViewer
         {
             return compile(false, false);
         }
-        catch (NullPointerException ignored)
+        catch (NullPointerException _)
         {
             return false;
         }
@@ -511,9 +511,8 @@ public class BytecodeViewer
 
         for (java.awt.Component c : BytecodeViewer.viewer.workPane.getLoadedViewers())
         {
-            if (c instanceof ClassViewer)
+            if (c instanceof ClassViewer cv)
             {
-                ClassViewer cv = (ClassViewer) c;
 
                 if (noErrors && !cv.bytecodeViewPanel1.compile())
                     noErrors = false;
@@ -791,7 +790,7 @@ public class BytecodeViewer
         {
             FileUtils.deleteDirectory(tempF);
         }
-        catch (Exception ignored)
+        catch (Exception _)
         {
         }
 

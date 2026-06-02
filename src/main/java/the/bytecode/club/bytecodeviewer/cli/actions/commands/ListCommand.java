@@ -3,6 +3,7 @@ package the.bytecode.club.bytecodeviewer.cli.actions.commands;
 import org.apache.commons.cli.CommandLine;
 import the.bytecode.club.bytecodeviewer.cli.CLICommand;
 
+
 import static the.bytecode.club.bytecodeviewer.Constants.VERSION;
 
 /**

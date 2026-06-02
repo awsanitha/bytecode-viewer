@@ -498,7 +498,7 @@ public class CommandLineInput
                 Thread.sleep(200);
                 cn.accept(cw);
             }
-            catch (InterruptedException ignored)
+            catch (InterruptedException _)
             {
             }
         }

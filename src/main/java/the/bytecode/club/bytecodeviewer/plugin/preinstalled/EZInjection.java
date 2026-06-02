@@ -224,7 +224,7 @@ public class EZInjection extends Plugin
                 String[] split = proxy.split(":");
                 setProxy(split[0], split[1]);
             }
-            catch (Exception e)
+            catch (Exception _)
             {
                 // ignore
             }

@@ -35,6 +35,7 @@ import javax.swing.*;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
+import java.net.URI;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -295,7 +296,7 @@ public class Boot
 
     public static void populateUrlList() throws Exception
     {
-        HTTPRequest req = new HTTPRequest(new URL("https://github.com/Konloch/bytecode-viewer/tree/master/libs"));
+        HTTPRequest req = new HTTPRequest(URI.create("https://github.com/Konloch/bytecode-viewer/tree/master/libs").toURL());
         for (String s : req.read())
             if (s.contains("href=\"/Konloch/bytecode-viewer/blob/master/libs/"))
             {

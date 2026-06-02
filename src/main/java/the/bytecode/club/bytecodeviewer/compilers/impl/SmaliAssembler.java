@@ -102,7 +102,7 @@ public class SmaliAssembler extends AbstractCompiler
                 //return the assembled file
                 return FileUtils.readFileToByteArray(outputClass);
             }
-            catch (java.lang.NullPointerException ignored)
+            catch (java.lang.NullPointerException _)
             {
             }
         }

@@ -104,7 +104,7 @@ public class JarUtils
                     }
 
                 }
-                catch (java.io.EOFException | ZipException e)
+                catch (java.io.EOFException | ZipException _)
                 {
                     //ignore cause apache unzip
                 }
