@@ -8,6 +8,7 @@ import the.bytecode.club.bytecodeviewer.util.MiscUtils;
 
 import javax.swing.*;
 
+
 /**
  * @author Konloch
  * @since 10/2/2024
