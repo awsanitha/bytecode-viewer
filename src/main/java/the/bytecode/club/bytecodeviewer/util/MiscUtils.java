@@ -98,7 +98,7 @@ public class MiscUtils
             String line;
             while ((line = br.readLine()) != null)
             {
-                System.out.println(line);
+                IO.println(line);
             }
         }
 
@@ -109,7 +109,7 @@ public class MiscUtils
             String line;
             while ((line = br.readLine()) != null)
             {
-                System.out.println(line);
+                IO.println(line);
             }
         }
     }

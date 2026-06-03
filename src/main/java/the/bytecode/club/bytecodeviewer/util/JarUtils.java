@@ -212,7 +212,7 @@ public class JarUtils
                         }
                         else
                         {
-                            System.out.println(jarFile + ">" + name + ": Header does not start with CAFEBABE, ignoring.");
+                            IO.println(jarFile + ">" + name + ": Header does not start with CAFEBABE, ignoring.");
                         }
                     }
 
