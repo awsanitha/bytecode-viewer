@@ -303,7 +303,7 @@ public class MiscUtils
         list.addAll(temporaryList);
 
         while (list.size() > maxLength)
-            list.remove(list.size() - 1);
+            list.removeLast();
     }
 
     /**

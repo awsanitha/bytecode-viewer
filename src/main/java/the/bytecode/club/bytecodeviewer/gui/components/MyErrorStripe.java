@@ -205,9 +205,8 @@ public class MyErrorStripe extends JPanel
         {
             Component source = (Component) e.getSource();
 
-            if (source instanceof MyErrorStripe.Marker)
+            if (source instanceof Marker m)
             {
-                Marker m = (Marker) source;
                 m.mouseClicked(e);
                 return;
             }
@@ -365,7 +364,7 @@ public class MyErrorStripe extends JPanel
 
         protected void mouseClicked(MouseEvent e)
         {
-            ParserNotice pn = notices.get(0);
+            ParserNotice pn = notices.getFirst();
             int offs = pn.getOffset();
             int len = pn.getLength();
 
@@ -424,7 +423,7 @@ public class MyErrorStripe extends JPanel
 
         public void updateLocation()
         {
-            int line = notices.get(0).getLine();
+            int line = notices.getFirst().getLine();
             int y = lineToY(line - 1, null);
             setLocation(2, y);
         }

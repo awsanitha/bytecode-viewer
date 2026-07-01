@@ -168,6 +168,6 @@ public class New extends ContextMenuItem
     {
         CLASS,
         FILE,
-        DIRECTORY;
+        DIRECTORY
     }
 }

@@ -278,19 +278,14 @@ public class BytecodeViewPanelUpdater implements Runnable
                         {
                             int setLine = -1;
 
-                            RSyntaxTextArea area = null;
-                            switch (i)
+                            RSyntaxTextArea area = switch (i)
                             {
-                                case 0:
-                                    area = viewer.bytecodeViewPanel1.updateThread.updateUpdaterTextArea;
-                                    break;
-                                case 1:
-                                    area = viewer.bytecodeViewPanel2.updateThread.updateUpdaterTextArea;
-                                    break;
-                                case 2:
-                                    area = viewer.bytecodeViewPanel3.updateThread.updateUpdaterTextArea;
-                                    break;
-                            }
+                                case 0: yield viewer.bytecodeViewPanel1.updateThread.updateUpdaterTextArea;
+                                case 1: yield viewer.bytecodeViewPanel2.updateThread.updateUpdaterTextArea;
+                                case 2: yield viewer.bytecodeViewPanel3.updateThread.updateUpdaterTextArea;
+                                default:
+                                     yield null;
+                            };
 
                             if (area != null)
                             {
@@ -366,21 +361,16 @@ public class BytecodeViewPanelUpdater implements Runnable
                 {
                     int line = (int) Objects.requireNonNull(methodsList.getSelectedItem());
 
-                    RSyntaxTextArea area = null;
-                    switch (bytecodeViewPanel.panelIndex)
+                    RSyntaxTextArea area = switch (bytecodeViewPanel.panelIndex)
                     {
-                        case 0:
-                            area = viewer.bytecodeViewPanel1.updateThread.updateUpdaterTextArea;
-                            break;
+                        case 0: yield viewer.bytecodeViewPanel1.updateThread.updateUpdaterTextArea;
 
-                        case 1:
-                            area = viewer.bytecodeViewPanel2.updateThread.updateUpdaterTextArea;
-                            break;
+                        case 1: yield viewer.bytecodeViewPanel2.updateThread.updateUpdaterTextArea;
 
-                        case 2:
-                            area = viewer.bytecodeViewPanel3.updateThread.updateUpdaterTextArea;
-                            break;
-                    }
+                        case 2: yield viewer.bytecodeViewPanel3.updateThread.updateUpdaterTextArea;
+                        default:
+                             yield null;
+                    };
 
                     if (area != null)
                         ClassViewer.selectMethod(area, line);

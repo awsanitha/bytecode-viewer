@@ -838,8 +838,8 @@ public class MainViewerGUI extends JFrame
                 if (waitIcons.isEmpty())
                     return;
 
-                JMenuItem waitIcon = waitIcons.get(0);
-                waitIcons.remove(0);
+                JMenuItem waitIcon = waitIcons.getFirst();
+                waitIcons.removeFirst();
                 rootMenu.remove(waitIcon);
 
                 //re-enable the Refresh Button incase it gets stuck
