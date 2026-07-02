@@ -126,38 +126,38 @@ public class InstructionPrinter implements Opcodes
     public String printInstruction(AbstractInsnNode ain)
     {
         String line = "";
-        if (ain instanceof VarInsnNode)
-            line = printVarInsnNode((VarInsnNode) ain);
-        else if (ain instanceof IntInsnNode)
-            line = printIntInsnNode((IntInsnNode) ain);
-        else if (ain instanceof FieldInsnNode)
-            line = printFieldInsnNode((FieldInsnNode) ain);
-        else if (ain instanceof MethodInsnNode)
-            line = printMethodInsnNode((MethodInsnNode) ain);
-        else if (ain instanceof LdcInsnNode)
-            line = printLdcInsnNode((LdcInsnNode) ain);
-        else if (ain instanceof InsnNode)
-            line = printInsnNode((InsnNode) ain);
-        else if (ain instanceof JumpInsnNode)
-            line = printJumpInsnNode((JumpInsnNode) ain);
-        else if (ain instanceof LineNumberNode)
-            line = printLineNumberNode((LineNumberNode) ain);
-        else if (ain instanceof LabelNode)
-            line = printLabelNode((LabelNode) ain);
-        else if (ain instanceof TypeInsnNode)
-            line = printTypeInsnNode((TypeInsnNode) ain);
-        else if (ain instanceof FrameNode)
-            line = printFrameNode((FrameNode) ain);
-        else if (ain instanceof IincInsnNode)
-            line = printIincInsnNode((IincInsnNode) ain);
-        else if (ain instanceof TableSwitchInsnNode)
-            line = printTableSwitchInsnNode((TableSwitchInsnNode) ain);
-        else if (ain instanceof LookupSwitchInsnNode)
-            line = printLookupSwitchInsnNode((LookupSwitchInsnNode) ain);
-        else if (ain instanceof InvokeDynamicInsnNode)
-            line = printInvokeDynamicInsNode((InvokeDynamicInsnNode) ain);
-        else if (ain instanceof MultiANewArrayInsnNode)
-            line = printMultiANewArrayInsNode((MultiANewArrayInsnNode) ain);
+        if (ain instanceof VarInsnNode node15)
+            line = printVarInsnNode(node15);
+        else if (ain instanceof IntInsnNode node14)
+            line = printIntInsnNode(node14);
+        else if (ain instanceof FieldInsnNode node13)
+            line = printFieldInsnNode(node13);
+        else if (ain instanceof MethodInsnNode node12)
+            line = printMethodInsnNode(node12);
+        else if (ain instanceof LdcInsnNode node11)
+            line = printLdcInsnNode(node11);
+        else if (ain instanceof InsnNode node10)
+            line = printInsnNode(node10);
+        else if (ain instanceof JumpInsnNode node9)
+            line = printJumpInsnNode(node9);
+        else if (ain instanceof LineNumberNode node8)
+            line = printLineNumberNode(node8);
+        else if (ain instanceof LabelNode node7)
+            line = printLabelNode(node7);
+        else if (ain instanceof TypeInsnNode node6)
+            line = printTypeInsnNode(node6);
+        else if (ain instanceof FrameNode node5)
+            line = printFrameNode(node5);
+        else if (ain instanceof IincInsnNode node4)
+            line = printIincInsnNode(node4);
+        else if (ain instanceof TableSwitchInsnNode node3)
+            line = printTableSwitchInsnNode(node3);
+        else if (ain instanceof LookupSwitchInsnNode node2)
+            line = printLookupSwitchInsnNode(node2);
+        else if (ain instanceof InvokeDynamicInsnNode node1)
+            line = printInvokeDynamicInsNode(node1);
+        else if (ain instanceof MultiANewArrayInsnNode node)
+            line = printMultiANewArrayInsNode(node);
         else
             line += "UNADDED OPCODE: " + nameOpcode(ain.getOpcode()) + " " + ain;
 
@@ -411,12 +411,12 @@ public class InstructionPrinter implements Opcodes
 
     private String printFrameObject(Object obj)
     {
-        if (obj instanceof LabelNode)
-            return "label [L" + resolveLabel((LabelNode) obj) + "]";
+        if (obj instanceof LabelNode node)
+            return "label [L" + resolveLabel(node) + "]";
 
-        if (obj instanceof Integer)
+        if (obj instanceof Integer integer)
         {
-            switch ((int) obj)
+            switch (integer)
             {
                 case 0:
                     return "top";

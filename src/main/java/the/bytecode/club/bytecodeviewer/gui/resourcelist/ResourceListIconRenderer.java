@@ -45,15 +45,13 @@ public class ResourceListIconRenderer extends DefaultTreeCellRenderer
     {
         Component ret = super.getTreeCellRendererComponent(tree, value, selected, expanded, leaf, row, hasFocus);
 
-        if (value instanceof ResourceTreeNode)
+        if (value instanceof ResourceTreeNode node)
         {
             if (iconCache.containsKey(value))
             {
                 setIcon(iconCache.get(value));
                 return ret;
             }
-
-            ResourceTreeNode node = (ResourceTreeNode) value;
 
             String nameOG = node.toString();
             String name = nameOG.toLowerCase();

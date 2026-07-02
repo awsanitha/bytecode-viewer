@@ -82,8 +82,10 @@ public class APKExport implements Exporter
         }
         else
         {
-            BytecodeViewer.showMessage("You can only export as APK from a valid APK file. Make sure Settings>Decode Resources is ticked on."
-                + "\n\nTip: Try exporting as DEX, it doesn't rely on decoded APK resources");
+            BytecodeViewer.showMessage("""
+                You can only export as APK from a valid APK file. Make sure Settings>Decode Resources is ticked on.
+                
+                Tip: Try exporting as DEX, it doesn't rely on decoded APK resources""");
             return;
         }
 

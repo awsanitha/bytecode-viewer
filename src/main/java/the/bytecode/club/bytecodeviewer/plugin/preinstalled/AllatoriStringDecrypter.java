@@ -126,16 +126,14 @@ public class AllatoriStringDecrypter extends Plugin
         LdcInsnNode laststringldconstack = null;
         for (AbstractInsnNode i : iList.toArray())
         {
-            if (i instanceof LdcInsnNode)
+            if (i instanceof LdcInsnNode ldcI)
             {
-                LdcInsnNode ldcI = (LdcInsnNode) i;
                 if (ldcI.cst instanceof String)
                     laststringldconstack = ldcI;
                 continue;
             }
-            else if (i instanceof MethodInsnNode)
+            else if (i instanceof MethodInsnNode methodI)
             {
-                MethodInsnNode methodI = (MethodInsnNode) i;
 
                 // Decryption is always a static call - 0xb8 - invokestatic
                 if (laststringldconstack != null && methodI.getOpcode() == 0xb8)
@@ -191,9 +189,8 @@ public class AllatoriStringDecrypter extends Plugin
                 }
 
             }
-            else if (i instanceof InvokeDynamicInsnNode)
+            else if (i instanceof InvokeDynamicInsnNode methodi)
             {
-                InvokeDynamicInsnNode methodi = (InvokeDynamicInsnNode) i;
                 if (methodi.getOpcode() == 0xba)
                 {
                     // TODO: Safe-reflection deobfuscator here
@@ -216,9 +213,9 @@ public class AllatoriStringDecrypter extends Plugin
         AbstractInsnNode insn = null, removeInsn;
         for (AbstractInsnNode i : iList.toArray())
         {
-            if (i instanceof MethodInsnNode)
+            if (i instanceof MethodInsnNode node)
             {
-                MethodInsnNode methodi = ((MethodInsnNode) i);
+                MethodInsnNode methodi = node;
 
                 if ("currentThread".equals(methodi.name)) // find code form this instruction
                 {
@@ -233,9 +230,9 @@ public class AllatoriStringDecrypter extends Plugin
 
         while (insn != null)
         {
-            if (insn instanceof MethodInsnNode)
+            if (insn instanceof MethodInsnNode node1)
             {
-                MethodInsnNode methodi = ((MethodInsnNode) insn);
+                MethodInsnNode methodi = node1;
 
                 if ("hashCode".equals(methodi.name)) // to this instruction
                     break;
