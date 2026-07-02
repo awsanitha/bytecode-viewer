@@ -25,6 +25,7 @@ import the.bytecode.club.bytecodeviewer.resources.IconResources;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.Serial;
 
 /**
  * The UI for replace strings plugin.
@@ -96,6 +97,7 @@ public class ReplaceStringsOptions extends JFrame
         this.setLocationRelativeTo(null);
     }
 
+    @Serial
     private static final long serialVersionUID = -2662514582647810868L;
     private final JTextField originalLDC;
     private final JTextField newLDC;

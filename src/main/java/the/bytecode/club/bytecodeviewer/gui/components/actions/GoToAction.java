@@ -402,9 +402,8 @@ public class GoToAction extends AbstractAction
 
                 for (CaretListener caretListener : panel.textArea.getCaretListeners())
                 {
-                    if (caretListener instanceof BytecodeViewPanelUpdater.MarkerCaretListener)
+                    if (caretListener instanceof BytecodeViewPanelUpdater.MarkerCaretListener markerCaretListener)
                     {
-                        BytecodeViewPanelUpdater.MarkerCaretListener markerCaretListener = (BytecodeViewPanelUpdater.MarkerCaretListener) caretListener;
 
                         markerCaretListener.caretUpdate(new CaretEvent(panel.textArea)
                         {
