@@ -511,9 +511,8 @@ public class BytecodeViewer
 
         for (java.awt.Component c : BytecodeViewer.viewer.workPane.getLoadedViewers())
         {
-            if (c instanceof ClassViewer)
+            if (c instanceof ClassViewer cv)
             {
-                ClassViewer cv = (ClassViewer) c;
 
                 if (noErrors && !cv.bytecodeViewPanel1.compile())
                     noErrors = false;

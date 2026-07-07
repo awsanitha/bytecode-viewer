@@ -34,6 +34,7 @@ import java.awt.*;
 import java.awt.event.ItemListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.Serial;
 import java.util.Objects;
 
 /**
@@ -240,5 +241,6 @@ public class SearchBoxPane extends TranslatedVisibleComponent
         BytecodeViewer.viewer.viewPane3.setPaneEditable(editable3);
     }
 
+    @Serial
     private static final long serialVersionUID = -1098524689236993932L;
 }
