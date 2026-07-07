@@ -96,7 +96,7 @@ public class UpdateCheck implements Runnable
     {
         try
         {
-            HTTPRequest r = new HTTPRequest(new URL("https://raw.githubusercontent.com/Konloch/bytecode-viewer/master/VERSION"));
+            HTTPRequest r = new HTTPRequest(URI.create("https://raw.githubusercontent.com/Konloch/bytecode-viewer/master/VERSION").toURL());
             final Version version = Version.parseVersion(r.readSingle());
             final Version localVersion = Version.parseVersion(VERSION);
 
