@@ -1,0 +1,85 @@
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: com.amazonaws.java.migrate.UpgradeToJava17
+displayName: Migrate to Java 17
+description: >-
+  Migrate to Java 17. Delegates to the official, validated OpenRewrite recipe
+  org.openrewrite.java.migrate.UpgradeToJava17 (cumulative from Java 8/11) so the recipe list
+  stays correct and current with the resolved rewrite-migrate-java version rather than being a
+  hand-maintained copy that drifts. The official recipe already includes the J2EE dependency
+  additions, deprecated-API replacements, build/plugin upgrades, and the guice/commons-codec/
+  spotbugs/mapstruct/lombok dependency bumps. StringFormatted is appended to preserve prior
+  toolkit behavior (the official recipe does not include it).
+tags:
+  - java17
+recipeList:
+  - org.openrewrite.java.migrate.UpgradeToJava17
+  - org.openrewrite.java.migrate.lang.StringFormatted:
+      addParentheses: false
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: com.amazonaws.java.migrate.UpgradeToJava21
+displayName: Migrate to Java 21
+description: >-
+  Migrate to Java 21. Delegates to the official, validated OpenRewrite recipe
+  org.openrewrite.java.migrate.UpgradeToJava21 (cumulative, chains Java 17). StringFormatted is
+  appended to preserve prior toolkit behavior.
+tags:
+  - java21
+recipeList:
+  - org.openrewrite.java.migrate.UpgradeToJava21
+  - org.openrewrite.java.migrate.lang.StringFormatted:
+      addParentheses: false
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: com.amazonaws.java.migrate.UpgradeToJava25
+displayName: Migrate to Java 25
+description: >-
+  Migrate to Java 25. Delegates to the official, validated OpenRewrite recipe
+  org.openrewrite.java.migrate.UpgradeToJava25 (cumulative, chains Java 21). This uses the
+  official UpgradeBuildToJava25 family for build-file updates rather than the older generic
+  UpgradeJavaVersion. StringFormatted and MigrateMainMethodToInstanceMain are appended to
+  preserve prior toolkit behavior (instance main is an optional modernization the official
+  recipe does not apply).
+tags:
+  - java25
+recipeList:
+  - org.openrewrite.java.migrate.UpgradeToJava25
+  - org.openrewrite.java.migrate.lang.StringFormatted:
+      addParentheses: false
+  - org.openrewrite.java.migrate.lang.MigrateMainMethodToInstanceMain
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: com.amazonaws.java.spring.boot.UpgradeSpringBoot
+displayName: Migrate to the latest stable Spring Boot (3.5)
+description: >-
+  Migrate applications to the latest stable Spring Boot 3.5 release. This delegates to the
+  official, cumulative OpenRewrite recipe UpgradeSpringBoot_3_5, which chains the full path
+  from Spring Boot 2.x through 2.7, 3.0, 3.1, 3.2, 3.3, 3.4 and on to 3.5 - including the
+  Jakarta namespace migration, Spring Framework 6.2, Spring Security 6, Spring Data, Spring
+  Cloud, Spring Kafka, Hibernate 6, springdoc, build-file and plugin updates, and per-version
+  property migrations. Because the official recipe is cumulative and version-aware, we delegate
+  to it rather than re-listing the individual sub-recipes (which would drift out of date).
+tags:
+  - spring
+  - boot
+recipeList:
+  - org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_5
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: com.amazonaws.java.spring.boot4.UpgradeSpringBoot_4_0
+displayName: Migrate to Spring Boot 4.0 (latest major - opt-in)
+description: >-
+  Migrate applications to Spring Boot 4.0 (community edition). This delegates to the official
+  cumulative recipe UpgradeSpringBoot_4_0, which first lands the app on Spring Boot 3.5, then
+  upgrades to Spring Framework 7.0, Spring Security 7.0, Spring Batch 6.0, Hibernate 7.1,
+  springdoc 3.0, and testcontainers 2.x. NOTE: Spring Boot 4.0 introduces structural breaking
+  changes - modular starters, the spring-boot-starter-web -> spring-boot-starter-webmvc rename,
+  oauth2 starter renames, and AOP starter changes - that frequently require manual follow-up by
+  the Kiro CLI. See migration-knowledge/java/19-spring-boot-latest-migration.md. This recipe is
+  OPT-IN and is not the default pipeline target. Requires rewrite-spring 6.33.0 or newer.
+tags:
+  - spring
+  - boot
+recipeList:
+  - org.openrewrite.java.spring.boot4.UpgradeSpringBoot_4_0
