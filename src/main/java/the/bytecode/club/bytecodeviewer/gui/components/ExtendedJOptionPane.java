@@ -95,8 +95,8 @@ public class ExtendedJOptionPane
 
         if (options == null)
         {
-            if (selectedValue instanceof Integer)
-                return (Integer) selectedValue;
+            if (selectedValue instanceof Integer integer)
+                return integer;
             return CLOSED_OPTION;
         }
 
