@@ -205,9 +205,8 @@ public class MyErrorStripe extends JPanel
         {
             Component source = (Component) e.getSource();
 
-            if (source instanceof MyErrorStripe.Marker)
+            if (source instanceof Marker m)
             {
-                Marker m = (Marker) source;
                 m.mouseClicked(e);
                 return;
             }
