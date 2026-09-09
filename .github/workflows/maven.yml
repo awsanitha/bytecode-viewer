@@ -32,7 +32,7 @@ jobs:
       id: project
     - name: 'Upload Artifact'
       uses: actions/upload-artifact@v4
-      if: ${{ matrix.java == '8' }}
+      if: ${{ matrix.java == '21' }}
       with:
         name: Bytecode-Viewer-${{ env.bcv_version }}-SNAPSHOT
         path: target/Bytecode-Viewer-${{ env.bcv_version }}.jar
