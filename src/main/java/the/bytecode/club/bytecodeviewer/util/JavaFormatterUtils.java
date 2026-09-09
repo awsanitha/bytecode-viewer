@@ -21,5 +21,11 @@ public class JavaFormatterUtils
 
             return decompiledCode;
         }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+
+            return decompiledCode;
+        }
     }
 }

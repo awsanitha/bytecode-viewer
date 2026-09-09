@@ -28,7 +28,7 @@
     <path/>
     <bundledJre64Bit>false</bundledJre64Bit>
     <bundledJreAsFallback>false</bundledJreAsFallback>
-    <minVersion>1.7.0_00</minVersion>
+    <minVersion>21</minVersion>
     <maxVersion/>
     <jdkPreference>preferJre</jdkPreference>
     <runtimeBits>64/32</runtimeBits>
