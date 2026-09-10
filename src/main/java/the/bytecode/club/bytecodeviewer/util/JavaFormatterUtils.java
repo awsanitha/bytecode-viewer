@@ -1,7 +1,6 @@
 package the.bytecode.club.bytecodeviewer.util;
 
 import com.google.googlejavaformat.java.Formatter;
-import com.google.googlejavaformat.java.FormatterException;
 
 /**
  * @author Konloch
@@ -15,7 +14,7 @@ public class JavaFormatterUtils
         {
             return new Formatter().formatSource(decompiledCode);
         }
-        catch (FormatterException e)
+        catch (Exception e)
         {
             e.printStackTrace();
 
