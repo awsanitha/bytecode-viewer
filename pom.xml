@@ -7,7 +7,7 @@
 
     <properties>
         <!-- Project settings -->
-        <java.version>1.8</java.version>
+        <java.version>21</java.version>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -33,7 +33,7 @@
         <dex2jar.version>2.4.34</dex2jar.version>
         <disk-lib.version>1.2.0</disk-lib.version>
         <fernflower.version>e0d44f4</fernflower.version>
-        <google-java-format.version>1.7</google-java-format.version> <!-- Newer versions require Java 11+ -->
+        <google-java-format.version>1.25.2</google-java-format.version>
         <gson.version>2.13.2</gson.version>
         <guava.version>33.5.0-jre</guava.version>
         <httprequest.version>2.2.0</httprequest.version>
